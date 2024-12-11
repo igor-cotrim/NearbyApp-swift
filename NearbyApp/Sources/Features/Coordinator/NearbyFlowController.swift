@@ -31,7 +31,14 @@ extension NearbyFlowController: SplashFlowDelegate {
         let welcomeViewController = WelcomeViewController(
             contentView: contentView
         )
-        
+        welcomeViewController.delegate = self
         navigationController?.pushViewController(welcomeViewController, animated: true)
+    }
+}
+
+extension NearbyFlowController: WelcomeFlowDelegate {
+    func goToHome() {
+        let homeViewController = HomeViewController()
+        navigationController?.pushViewController(homeViewController, animated: true)
     }
 }

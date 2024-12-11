@@ -267,6 +267,10 @@ class HomeView: UIView {
                     action: #selector(filterButtonTapped(_:)),
                     for: .touchUpInside
                 )
+            if category.name == "Alimentação" {
+                updateButtonSelection(button: button)
+            }
+            
             filterStackView.addArrangedSubview(button)
         }
     }
